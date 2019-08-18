@@ -2,7 +2,7 @@
 <section class="container-fluid bg-brown mt-5">
   <div class="row d-flex justify-content-center py-5">
     <div class="col-md-4 text-center">
-      <img src="{{ asset('img/logo-miza-2014.png') }}" width="70px" alt="MIZA" title="MIZA" />
+      <img src="{{ asset('img/MIZA.jpg') }}" width="70" alt="MIZA" title="MIZA" />
     </div>
   </div>
   <div class="row d-flex justify-content-center">

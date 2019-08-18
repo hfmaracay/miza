@@ -44,7 +44,7 @@
     <div class="col-sm-8 text-center">
       <h1 class="text-white qsb">MUSEO DEL INSTITUTO DE ZOOLOGÍA AGRÍCOLA</h1>
       <h3 class="text-white qsb">"Francisco Fernandez Yépez"</h3>
-      <img src="{{ asset('img/logo-miza-2014.png') }}" alt="MIZA" title="MIZA" />
+      <img src="{{ asset('img/MIZA.jpg') }}" width="80" alt="MIZA" title="MIZA" />
     </div>
   </div>
 </section>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <title>MIZA - MUSEO DEL INSTITUTO DE ZOOLOGÍA AGRÍCOLA "Francisco Fernandez Yépez"</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/logo.png') }}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/MIZA.png') }}" />
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -61,7 +61,7 @@
     <div class="col-5 text-md-center ml-md-auto ">
       <h1 class="text-white qsb mr-sm-3" >MUSEO DEL INSTITUTO DE ZOOLOGÍA AGRÍCOLA</h1>
       <h3 class="text-white qsb mr-sm-3" >"Francisco Fernandez Yépez"</h3>
-      <img src="{{ asset('img/logo-miza-2014.png') }}" alt="MIZA" title="MIZA" />
+      <img src="{{ asset('img/MIZA.jpg') }}" width="80" alt="MIZA" title="MIZA" />
     </div>
   </section>
 
@@ -75,7 +75,7 @@
     </div>
     <div class="row d-flex justify-content-between align-items-center">
       <div class="col-sm-6">
-        <img class="img-thumbnail" src="{{ asset('img/miza.jpg') }}" alt="Sede MIZA" title="Sede MIZA" />
+        <img class="img-thumbnail" src="{{ asset('img/MIZA_Sede.jpg') }}" alt="Sede MIZA" title="Sede MIZA" />
       </div>
       <div class="col-sm-6  text-center">
         <p class="lead text-justify">EI Museo del Instituto de Zoología Agrícola “Francisco Fernández Yépez” (MIZA), es una institución dedicada al estudio de la biodiversidad tropical. Tenemos la convicción de que el conocimiento de nuestro patrimonio biológico está íntimamente relacionado con su preservación y uso sostenible, es por ello que la educación ambiental es una herramienta vital para formar ciudadanos conscientes y protectores de nuestro patrimonio biológico.</p>
@@ -144,7 +144,7 @@
   <section class="container-fluid bg-brown mt-5">
     <div class="row d-flex justify-content-center py-5">
       <div class="col-md-4 text-center">
-        <img src="{{ asset('img/logo-miza-2014.png') }}" width="70px" alt="MIZA" title="MIZA" />
+        <img src="{{ asset('img/MIZA.jpg') }}" width="70" alt="MIZA" title="MIZA" />
       </div>
     </div>
     <div class="row d-flex justify-content-center">

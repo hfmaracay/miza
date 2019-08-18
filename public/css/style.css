@@ -21,15 +21,6 @@ body, html {
   background-position: 0;
 }
 
-.header1 { 
-  background: url("../img/leps.jpg") rgba(0,0,0,0.7); 
-  background-position: 50% 40%; 
-  background-size: cover;
-  background-blend-mode: darken;
-  z-index: 1;
-  position: relative;
-}
-
 .header2 { 
   background: url("../img/banner2.jpg") rgba(136,72,28,0.7); 
   background-position: 50% 40%; 
