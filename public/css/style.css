@@ -1,0 +1,75 @@
+/*****************************
+       MIZA StyleSheet
+*****************************/
+
+html, body {
+	margin: 0;
+	overflow-x: hidden !important;
+	max-width: 100% !impotant;
+}
+
+body, html {
+ 	margin: 0;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+.header {
+  background: url("../img/banner1.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: 0;
+}
+
+.header1 { 
+  background: url("../img/leps.jpg") rgba(0,0,0,0.7); 
+  background-position: 50% 40%; 
+  background-size: cover;
+  background-blend-mode: darken;
+  z-index: 1;
+  position: relative;
+}
+
+.header2 { 
+  background: url("../img/banner2.jpg") rgba(136,72,28,0.7); 
+  background-position: 50% 40%; 
+  background-size: cover;
+  background-blend-mode: darken;
+  z-index: 1;
+  position: relative;
+}
+
+.banner-quote { 
+  background: url("../img/heliconius.jpg") rgba(136,72,28,0.6); 
+  background-position: 50% 40%; 
+  background-size: cover;
+  background-blend-mode: darken;
+  z-index: 1;
+  position: relative;
+}
+
+.btn, .bg-brown {
+  background-color: #88481c;
+}
+
+.f-14 {
+	font-size: 14px;
+}
+
+.f-12 {
+	font-size: 12px;
+}
+
+.qsb, .qs { 
+	font-family: 'Quicksand', sans-serif !important; 
+}
+
+.qsb {
+	font-weight: bolder;
+}
+
+.bug {
+	width: 100%;
+	position: relative; 
+  z-index: 99;
+}
