@@ -10,18 +10,18 @@
       <p class="text-white lead">
         Museo del Instituto de Zoología Agrícola "Francisco Fernandez Yépez"<br />
         Facultad de Agronomía, Universidad Central de Venezuela<br />
-        Apdo 4579, Maracay 2101A, Venezuela
+        Maracay - Venezuela
       </p>
     </div>
   </div>
   <div class="row d-flex justify-content-center">
     <div class="col-md-4 text-center">
-      <p class=" text-white text-center f-14 lead">vsgioia@gmail.com<br />quintinarias@gmail.com</p>
+      <a class="link-white" href="mailto:miza.ucv@gmail.com">miza.ucv@gmail.com</a>
     </div>
   </div>
   <div class="row d-flex justify-content-center pt-5">
     <div class="col-md-4 text-center">
-      <p class=" text-white text-center f-12">Desarrollado por @hfmaracay | Diseñado por @melendesigns</p>
+      <p class=" text-white text-center f-12">Desarrollado por <a class="link-white" href="https://hfmaracay.com.ve/" target="_blank">H/F Maracay</a> | Diseñado por <a class="link-white" href="https://www.instagram.com/melendesigns" target="_blank">@melendesigns</a></p>
     </div>
   </div>
 </section>

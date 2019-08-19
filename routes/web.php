@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/institucion', function() {
+	return view('web.institucion');
+})->name('institucion');
+
 Route::get('/equipo', function() {
 	return view('web.equipo');
 })->name('equipo');
