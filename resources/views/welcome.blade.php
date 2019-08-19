@@ -26,7 +26,7 @@
             <a class="nav-link text-uppercase" href="{{ route('welcome') }}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase" href="#">Base de Datos</a>
+            <a class="nav-link text-uppercase" href="{{ route('institucion') }}">Institución</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-uppercase" href="{{ route('equipo') }}">Equipo</a>
@@ -45,7 +45,7 @@
               </li>
               @if(Route::has('register'))
                 <li class="nav-item">
-                  <a class="nav-link text-uppercase" href="{{ route('register') }}">Register</a>
+                  <a class="nav-link text-uppercase" href="{{ route('register') }}">Registro</a>
                 </li>
               @endif
             @endauth
@@ -79,7 +79,7 @@
       </div>
       <div class="col-sm-6  text-center">
         <p class="lead text-justify">EI Museo del Instituto de Zoología Agrícola “Francisco Fernández Yépez” (MIZA), es una institución dedicada al estudio de la biodiversidad tropical. Tenemos la convicción de que el conocimiento de nuestro patrimonio biológico está íntimamente relacionado con su preservación y uso sostenible, es por ello que la educación ambiental es una herramienta vital para formar ciudadanos conscientes y protectores de nuestro patrimonio biológico.</p>
-        <button type="button" class="btn mx-auto text-white"> Ver más</button>
+        <a class="btn mx-auto text-white" href="{{ route('institucion') }}">Ver más</a>
       </div>
     </div>
   </section>
@@ -152,18 +152,20 @@
         <p class="text-white lead">
           Museo del Instituto de Zoología Agrícola "Francisco Fernandez Yépez"<br />
           Facultad de Agronomía, Universidad Central de Venezuela<br />
-          Apdo 4579, Maracay 2101A, Venezuela
+          Maracay - Venezuela
         </p>
       </div>
     </div>
     <div class="row d-flex justify-content-center">
       <div class="col-md-4 text-center">
-        <p class=" text-white text-center f-14 lead">vsgioia@gmail.com<br />quintinarias@gmail.com</p>
+        <p class=" text-white text-center f-14 lead">
+          <a class="link-white" href="mailto:miza.ucv@gmail.com">miza.ucv@gmail.com</a>
+        </p>
       </div>
     </div>
     <div class="row d-flex justify-content-center pt-5">
       <div class="col-md-4 text-center">
-        <p class=" text-white text-center f-12">Desarrollado por @hfmaracay | Diseñado por @melendesigns</p>
+        <p class=" text-white text-center f-12">Desarrollado por <a class="link-white" href="https://hfmaracay.com.ve/" target="_blank">H/F Maracay</a> | Diseñado por <a class="link-white" href="https://www.instagram.com/melendesigns" target="_blank">@melendesigns</a></p>
       </div>
     </div>
   </section>

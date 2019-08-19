@@ -4,11 +4,11 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-transparent col-12 align-self-start p-3">
     <div class="collapse navbar-collapse d-md-flex justify-content-end" id="menu">
       <ul class="navbar-nav mt-2 mt-lg-0 qs mr-sm-3">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link text-uppercase" href="{{ route('welcome') }}">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-uppercase" href="#">Base de Datos</a>
+          <a class="nav-link text-uppercase" href="{{ route('institucion') }}">Institución</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-uppercase" href="{{ route('equipo') }}">Equipo</a>
@@ -27,7 +27,7 @@
             </li>
             @if(Route::has('register'))
               <li class="nav-item">
-                <a class="nav-link text-uppercase" href="{{ route('register') }}">Register</a>
+                <a class="nav-link text-uppercase" href="{{ route('register') }}">Registro</a>
               </li>
             @endif
           @endauth
