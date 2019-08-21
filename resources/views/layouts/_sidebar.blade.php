@@ -4,7 +4,7 @@
     <div class="sidebar-brand-icon">
       <i class="fas fa-laugh-wink"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">CFR FELABAN</div>
+    <div class="sidebar-brand-text mx-3">MIZA</div>
   </a>
 
   <!-- Divider -->

@@ -30,3 +30,5 @@ Route::get('/equipo', function() {
 Route::get('/contacto', function() {
 	return view('web.contacto');
 })->name('contacto');
+
+Route::get('/admin/equipo','Admin\TeamController@index')->name('team');
