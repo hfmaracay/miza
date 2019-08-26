@@ -5,9 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Team;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Teams\{AdminCreateTeamRequest, AdminUpdateTeamRequest};
 
 class TeamController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +30,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.team.create');
     }
 
     /**
@@ -36,7 +41,7 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
