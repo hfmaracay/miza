@@ -54,8 +54,8 @@
               </div>
 
               <div class="form-group files">
-                <label>Foto </label>
-                <input type="file" class="form-control" multiple="">
+                <label for="image">Foto </label>
+                <input type="file" class="form-control" name="image" id="image">
                   <div class="invalid-feedback">
                     {{ $errors->has('image') ? $errors->first('image') : 'Imagen es Requerida' }}
                   </div>

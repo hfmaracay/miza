@@ -33,3 +33,4 @@ Route::get('/contacto', function() {
 
 Route::get('/admin/equipo','Admin\TeamController@index')->name('admin.team');
 Route::get('/admin/equipo/agregar','Admin\TeamController@create')->name('admin.team.create');
+Route::get('/admin/equipo/agregar','Admin\TeamController@create')->name('admin.team.create');
