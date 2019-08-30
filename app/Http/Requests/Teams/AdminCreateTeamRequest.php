@@ -4,6 +4,7 @@ namespace App\Http\Requests\Teams;
 
 use App\Team;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Storage;
 
 class AdminCreateTeamRequest extends FormRequest
 {
@@ -29,7 +30,7 @@ class AdminCreateTeamRequest extends FormRequest
             'last_name' => 'required|string',
             'description' => 'required|string',
             'image' => 'required|image',
-
+            'title' => 'required|string'
         ];
     }
 
@@ -40,7 +41,8 @@ class AdminCreateTeamRequest extends FormRequest
          'last_name.required' => 'Apellido requerido',
          'description.required' => 'Descripción requerida',
          'image.required' => 'Imagen requerida',
-         'image.image' => 'Imagen inválida'
+         'image.image' => 'Imagen inválida',
+         'title.required' => 'El cargo es requerido'
        ];
      }
 
@@ -62,8 +64,9 @@ class AdminCreateTeamRequest extends FormRequest
          $teams = Team::create([
            'name' => $this->name,
            'last_name' =>$this->last_name,
-           'image' => $imageName,
+           'photo' => $imageName,
            'description' => $this->description,
+           'title' => $this->title
          ]);
        }
 }

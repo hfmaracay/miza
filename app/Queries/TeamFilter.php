@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
-class ProgramFilter extends QueryFilter
+class TeamFilter extends QueryFilter
 {
     public function rules(): array
     {

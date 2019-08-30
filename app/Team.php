@@ -20,6 +20,7 @@ class Team extends Model
 	'name',
 	'last_name',
 	'description',
+  'title',
 	'photo'];
 
 	/**

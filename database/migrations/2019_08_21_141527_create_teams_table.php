@@ -17,9 +17,11 @@ class CreateTeamsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('last_name');
+            $table->string('title');
             $table->longText('description');
             $table->string('photo');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

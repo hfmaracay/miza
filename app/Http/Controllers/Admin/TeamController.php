@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Team;
+use App\Queries\TeamFilter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teams\{AdminCreateTeamRequest, AdminUpdateTeamRequest};
@@ -18,9 +19,14 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, TeamFilter $filters)
     {
-        return view('admin.team.index');
+        $teams = Team::query()
+                        ->filterBy($filters, $request->only(['search', 'from', 'to']))
+                        ->orderBy('id', 'DESC')
+                        ->paginate();
+        $teams->appends($filters->valid());
+        return view('admin.team.index',compact('teams'));
     }
 
     /**
@@ -39,20 +45,11 @@ class TeamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminCreateTeamRequest $request, Team $team)
     {
-        
-    }
+        $request->createTeam($team);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Team $team)
-    {
-        //
+        return redirect()->route('admin.team')->with('message', 'Equipo creado con éxito');
     }
 
     /**
@@ -63,7 +60,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+        return view('admin.team.edit', ['team' => $team]);
     }
 
     /**
@@ -73,9 +70,44 @@ class TeamController extends Controller
      * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(AdminUpdateTeamRequest $request, Team $team)
     {
-        //
+        $request->updateTeam($team);
+
+        return redirect()->route('admin.team')->with('message', 'Equipo actualizado con éxito');
+    }
+
+    /**
+     * Display a listing trashed of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function trashed()
+    {
+      $teams = Team::onlyTrashed()->get();
+
+      return view('admin.team.trashed', compact('teams'));
+    }
+    /**
+     * Delete the specified resource.
+     *
+     * @param  \App\Team  $team
+     * @return \Illuminate\Http\Response
+     */
+    public function delete(Team $team)
+    {
+      $team->delete();
+
+      return redirect()->route('admin.team')->with('message', 'Equipo eliminado con éxito');
+    }
+
+    public function restore(int $id)
+    {
+      $team = Team::onlyTrashed()->where('id',$id);
+
+      $team->restore();
+
+      return redirect()->back()->with('message','Equipo restaurado con éxito');
     }
 
     /**
@@ -84,8 +116,12 @@ class TeamController extends Controller
      * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy(int $id)
     {
-        //
+        $team = Team::onlyTrashed()->where('id', $id)->first();
+
+        $team->forceDelete();
+
+        return redirect()->back()->with('message', 'Equipo elimanado con éxito');
     }
 }

@@ -46,6 +46,13 @@
                 </div>
               </div>
               <div class="form-group">
+                <label for="title">Cargo</label>
+                <input type="text" name="title" id="title" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" placeholder="Cargo" required />
+                <div class="invalid-feedback">
+                  {{ $errors->has('title') ? $errors->first('title') : 'Cargo es Requerido' }}
+                </div>
+              </div>
+              <div class="form-group">
                 <label for="description">Descripición</label>
                 <textarea name="description" cols="30" rows="5" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" placeholder="Descripción" required></textarea>
                 <div class="invalid-feedback">

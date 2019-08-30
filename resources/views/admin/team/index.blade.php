@@ -29,17 +29,17 @@
         @endif
         <div class="card my-3">
           <div class="card-body">
-            <form method="get" action="{{-- {{ route('adminTeam') }} --}}">
+            <form method="get" action="{{ route('admin.team') }}">
               @csrf
               <div class="form-row form-class">
                 <div class="col-md-5">
-                  <input type="text" id="search" name="search" class="form-control" placeholder="Buscar..." value="{{-- {{ request('search') }} --}}" />
+                  <input type="text" id="search" name="search" class="form-control" placeholder="Buscar..." value="{{ request('search') }}" />
                 </div>
                 <div class="col-md-3">
-                  <input type="text" id="from" name="from" class="form-control" placeholder="Fecha Desde" value="{{-- {{ request('from') }} --}}" readonly />
+                  <input type="text" id="from" name="from" class="form-control" placeholder="Fecha Desde" value="{{ request('from') }}" readonly />
                 </div>
                 <div class="col-md-3">
-                  <input type="text" id="to" name="to" class="form-control" placeholder="Fecha Hasta" value="{{-- {{ request('to') }} --}}" readonly />
+                  <input type="text" id="to" name="to" class="form-control" placeholder="Fecha Hasta" value="{{ request('to') }}" readonly />
                 </div>
                 <div class="col-md-1">
                   <button type="submit" class="btn btn-info"><i class="fas fa-search"></i></button>
@@ -50,7 +50,7 @@
         </div>
         <div class="d-flex my-2 justify-content-end">
           <a href="{{ route('admin.team.create') }}" class="btn btn-success"><i class="fas fa-plus-square"></i> Agregar Nuevo</a>
-          <a href="{{--  --}}" class="btn btn-danger mx-2"><i class="fas fa-trash-restore"></i> Ver Papelera</a>
+          <a href="{{ route('admin.team.trashed') }}" class="btn btn-danger mx-2"><i class="fas fa-trash-restore"></i> Ver Papelera</a>
         </div>
         <div class="table-responsive">
           <table class="table table-striped" id="dataTable" width="100%">
@@ -64,30 +64,31 @@
               </tr>
             </thead>
             <tbody>
-              
+              @foreach($teams as $team)
               <tr>
-                <th scope="row">{{-- {{ $category->name }} --}}Oscar </th>
-                <th scope="row">{{-- {{ $category->name }} --}} Ruiz</th>
-                <td>Backend dev</td>
-                <td>{{-- {{ $category->created_at->format('d/m/Y') }} --}}</td>
+                <th scope="row">{{$team->name}}</th>
+                <th scope="row">{{ $team->last_name }}</th>
+                <th scope="row">{{ $team->title }}</th>
+                <th scope="row">{{ $team->created_at->format('d/m/Y') }}</th>
                 <td>
-                  <a href="{{-- {{ route('adminCategorias.edit', $category) }} --}}"><i class="fas fa-edit "></i></a>
-                  <form method="post" action="{{-- {{ route('adminCategorias.trash', $category) }} --}}" class="d-inline">
+                  <a href="{{ route('admin.team.edit', $team) }}"><i class="fas fa-edit"></i></a>
+                  <form method="post" action="{{ route('admin.team.trash', $team) }}" class="d-inline">
                     {{ csrf_field() }}
                     {{ method_field('patch') }}
-                    <button type="submit" class="btn btn-link" style="color:red"><i class="fas fa-trash"></i></button>
+                    <button type="submit" class="btn btn-link"><i class="fas fa-trash"></i></button>
                   </form>
                 </td>
               </tr>
-        
+              @endforeach
             </tbody>
           </table>
         </div>
         <div class="row">
-          <div class="col-12 d-flex justify-content-center">{{-- {{ $categories->links() }} --}}</div>
+          <div class="col-12 d-flex justify-content-center">{{ $teams->links() }}</div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 @endsection
