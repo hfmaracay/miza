@@ -27,8 +27,9 @@ Sitio Web del Museo del Instituto de Zoología Agrícola “Francisco Fernández
 
 # Autores ✒️
 
-* **Dayan Betancourt** - [delfinbeta](https://github.com/delfinbeta)
-* **Raquel Melendez** - Diseñadora
+* **Dayan Betancourt** - *Líder de Proyecto* - [delfinbeta](https://github.com/delfinbeta)
+* **Raquel Melendez** - *Diseñadora*
+* **Oscar Ruiz** - *Desarrollador Backend* - [OscarERH](https://github.com/OscarERH/)
 
 # Licencia
 
