@@ -9,8 +9,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/MIZA.png') }}" />
 
   <!-- Fonts & Icons -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" />
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" />
   <link rel="stylesheet" type="text/css" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" />
 
@@ -22,33 +20,28 @@
 
   @stack('styles')
 </head>
-<body id="page-top">
-  <!-- Page Wrapper -->
-  <div id="wrapper">
-    <!-- Sidebar -->
-    @yield('sidebar')
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-      <!-- Main Content -->
-      <div id="content">
-        <!-- Topbar -->
-        @yield('topbar')
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-          @yield('content')
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; MIZA 2019</span>
+<body class="bg-gradient-warning">
+  <div class="container">
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-12 col-md-9">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <div class="row">
+              <div class="col-lg-5 d-none d-lg-block">
+                <div class="py-5">
+                  <img src="{{ asset('img/MIZA.jpg') }}" alt="MIZA" title="MIZA" class="img-fluid" />
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="p-5">
+                  @yield('content')
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
   </div>
 
