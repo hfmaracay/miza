@@ -74,6 +74,19 @@ Route::group(['middleware' => 'auth', 'prefix' => '/admin'] , function() {
   
   // Teams
   Route::get('/equipo', 'Admin\TeamController@index')->name('adminTeams');
+  Route::get('/equipo/agregar','Admin\TeamController@create')->name('adminTeams.create');
+  Route::post('/equipo/agregar','Admin\TeamController@store')->name('adminTeams.store');
+  Route::get('/equipo/{team}/editar','Admin\TeamController@edit')->name('adminTeams.edit')
+        ->where('team', '[0-9]+');
+  Route::put('/equipo/{team}/editar','Admin\TeamController@update')->name('adminTeams.update')
+        ->where('team', '[0-9]+');
+  Route::patch('/equipo/{team}/eliminar','Admin\TeamController@delete')->name('adminTeams.trash')
+        ->where('team', '[0-9]+');
+  Route::get('/equipo/eliminado','Admin\TeamController@trashed')->name('adminTeams.trashed');
+  Route::get('/equipo/{id}/restaurar','Admin\TeamController@restore')->name('adminTeams.restore')
+        ->where('id','[0-9]+');
+  Route::delete('/admin/equipo/{id}/eliminado','Admin\TeamController@destroy')->name('adminTeams.destroy')
+        ->where('id', '[0-9]+');
   
   // News
   Route::get('/noticias', 'Admin\NewsController@index')->name('adminNews');
