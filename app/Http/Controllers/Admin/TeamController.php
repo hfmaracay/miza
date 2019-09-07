@@ -4,124 +4,145 @@ namespace App\Http\Controllers\Admin;
 
 use App\Team;
 use App\Queries\TeamFilter;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teams\{AdminCreateTeamRequest, AdminUpdateTeamRequest};
+use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request, TeamFilter $filters)
-    {
-        $teams = Team::query()
-                        ->filterBy($filters, $request->only(['search', 'from', 'to']))
-                        ->orderBy('id', 'DESC')
-                        ->paginate();
-        $teams->appends($filters->valid());
-        return view('admin.team.index',compact('teams'));
-    }
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('admin.team.create');
-    }
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function index(Request $request, TeamFilter $filters)
+  {
+    $teams = Team::query()
+                  ->filterBy($filters, $request->only(['search', 'from', 'to']))
+                  ->orderBy('id', 'DESC')
+                  ->paginate();
+    
+    $teams->appends($filters->valid());
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(AdminCreateTeamRequest $request, Team $team)
-    {
-        $request->createTeam($team);
+    return view('admin.teams.index', compact('teams'));
+  }
 
-        return redirect()->route('admin.team')->with('message', 'Equipo creado con éxito');
-    }
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+    return view('admin.teams.create');
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Team $team)
-    {
-        return view('admin.team.edit', ['team' => $team]);
-    }
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \App\Team  $team
+   * @param  \Illuminate\Http\Requests\Teams\AdminCreateTeamRequest  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(AdminCreateTeamRequest $request, Team $team)
+  {
+    $request->createTeam($team);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function update(AdminUpdateTeamRequest $request, Team $team)
-    {
-        $request->updateTeam($team);
+    return redirect()->route('adminTeams')->with('message', 'Miembro del Equipo creado con éxito');
+  }
 
-        return redirect()->route('admin.team')->with('message', 'Equipo actualizado con éxito');
-    }
+  /**
+   * Display the specified resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function show()
+  {
+    //
+  }
 
-    /**
-     * Display a listing trashed of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function trashed()
-    {
-      $teams = Team::onlyTrashed()->get();
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  \App\Team  $team
+   * @return \Illuminate\Http\Response
+   */
+  public function edit(Team $team)
+  {
+    return view('admin.teams.edit', ['team' => $team]);
+  }
 
-      return view('admin.team.trashed', compact('teams'));
-    }
-    /**
-     * Delete the specified resource.
-     *
-     * @param  \App\Team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function delete(Team $team)
-    {
-      $team->delete();
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \App\Team  $team
+   * @param  \Illuminate\Http\Requests\Teams\AdminUpdateTeamRequest  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function update(AdminUpdateTeamRequest $request, Team $team)
+  {
+    $request->updateTeam($team);
 
-      return redirect()->route('admin.team')->with('message', 'Equipo eliminado con éxito');
-    }
+    return redirect()->route('adminTeams')->with('message', 'Miembro del Equipo actualizado con éxito');
+  }
 
-    public function restore(int $id)
-    {
-      $team = Team::onlyTrashed()->where('id',$id);
+  /**
+   * Display a listing trashed of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function trashed()
+  {
+    $teams = Team::onlyTrashed()->get();
 
-      $team->restore();
+    return view('admin.teams.trashed', compact('teams'));
+  }
 
-      return redirect()->back()->with('message','Equipo restaurado con éxito');
-    }
+  /**
+   * Delete the specified resource.
+   *
+   * @param  \App\Team  $team
+   * @return \Illuminate\Http\Response
+   */
+  public function delete(Team $team)
+  {
+    $team->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(int $id)
-    {
-        $team = Team::onlyTrashed()->where('id', $id)->first();
+    return redirect()->route('adminTeams')->with('message', 'Miembro del Equipo eliminado con éxito');
+  }
 
-        $team->forceDelete();
+  /**
+   * Restore the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function restore(int $id)
+  {
+    $team = Team::onlyTrashed()->where('id', $id)->first();
 
-        return redirect()->back()->with('message', 'Equipo elimanado con éxito');
-    }
+    $team->restore();
+
+    return redirect()->back()->with('message','Equipo restaurado con éxito');
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  \App\Team  $team
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy(int $id)
+  {
+    $team = Team::onlyTrashed()->where('id', $id)->first();
+
+    $team->forceDelete();
+
+    return redirect()->back()->with('message', 'Equipo elimanado con éxito');
+  }
 }

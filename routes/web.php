@@ -80,12 +80,12 @@ Route::group(['middleware' => 'auth', 'prefix' => '/admin'] , function() {
         ->where('team', '[0-9]+');
   Route::put('/equipo/{team}/editar','Admin\TeamController@update')->name('adminTeams.update')
         ->where('team', '[0-9]+');
+  Route::get('/equipo/papelera','Admin\TeamController@trashed')->name('adminTeams.trashed');
   Route::patch('/equipo/{team}/eliminar','Admin\TeamController@delete')->name('adminTeams.trash')
         ->where('team', '[0-9]+');
-  Route::get('/equipo/eliminado','Admin\TeamController@trashed')->name('adminTeams.trashed');
   Route::get('/equipo/{id}/restaurar','Admin\TeamController@restore')->name('adminTeams.restore')
         ->where('id','[0-9]+');
-  Route::delete('/admin/equipo/{id}/eliminado','Admin\TeamController@destroy')->name('adminTeams.destroy')
+  Route::delete('/equipo/{id}/destruir','Admin\TeamController@destroy')->name('adminTeams.destroy')
         ->where('id', '[0-9]+');
   
   // News
