@@ -17,25 +17,21 @@ class Team extends Model
    */
 
 	protected $fillable = [
-	'name',
-	'last_name',
-	'description',
-  'title',
-	'photo'];
+    'name', 'last_name', 'description', 'title', 'photo'
+  ];
 
 	/**
-   * Route to the team's photos.
+   * Route to the team's photo.
    *
    * @return image
    */
-
-	public function getUrlImageAttribute()
+	public function getUrlPhotoAttribute()
   {
-    return 'storage/teams/'.$this->image;
+    return 'storage/teams/'.$this->photo;
   }
 
-
-  public function scopeFilterBy($query, QueryFilter $filters, array $data) {
+  public function scopeFilterBy($query, QueryFilter $filters, array $data)
+  {
   	return $filters->applyTo($query, $data);
   }
 }
