@@ -71,6 +71,17 @@ Route::group(['middleware' => 'auth', 'prefix' => '/admin'] , function() {
   
   // Contents
   Route::get('/contenidos', 'Admin\ContentController@index')->name('adminContents');
+  Route::get('/contenidos/agregar','Admin\ContentController@create')->name('adminContents.create');
+  Route::post('/contenidos/agregar','Admin\ContentController@store')->name('adminContents.store');
+  Route::get('/contenidos/{content}/editar','Admin\ContentController@edit')->name('adminContents.edit')
+        ->where('content', '[0-9]+');
+  Route::put('/contenidos/{content}/editar','Admin\ContentController@update')->name('adminContents.update')
+        ->where('content', '[0-9]+');
+  Route::get('/contenidos/papelera','Admin\ContentController@trashed')->name('adminContents.trashed');
+  Route::patch('/contenidos/{content}/eliminar','Admin\ContentController@delete')->name('adminContents.trash')
+        ->where('content', '[0-9]+');
+  Route::get('/contenidos/{id}/restaurar','Admin\ContentController@restore')->name('adminContents.restore')
+        ->where('id','[0-9]+');
   
   // Teams
   Route::get('/equipo', 'Admin\TeamController@index')->name('adminTeams');
