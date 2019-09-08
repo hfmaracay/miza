@@ -52,21 +52,21 @@ Route::group(['middleware' => 'auth'] , function() {
 Route::group(['middleware' => 'auth', 'prefix' => '/admin'] , function() {
   // Users
   Route::get('/usuarios', 'Admin\UserController@index')->name('adminUsers');
-  Route::get('/usuarios/{user}', 'Admin\UserController@show')->name('adminUsers.show')
+  Route::get('/usuarios/{user}/editar', 'Admin\UserController@edit')->name('adminUsers.edit')
         ->where('user', '[0-9]+');
-  Route::put('/usuarios/{user}/update', 'Admin\UserController@update')->name('adminUsers.update')
+  Route::put('/usuarios/{user}/editar', 'Admin\UserController@update')->name('adminUsers.update')
         ->where('user', '[0-9]+');
   Route::get('/usuarios/{user}/password', 'Admin\UserController@password')->name('adminUsers.password')
         ->where('user', '[0-9]+');
   Route::put('/usuarios/{user}/password', 'Admin\UserController@updatePassword')
         ->name('adminUsers.updatePassword')->where('user', '[0-9]+');
 	Route::put('/usuarios/{id}/rol', 'Admin\UserController@rol')->name('adminUsers.rol')->where('id', '[0-9]+');
-	Route::get('/usuarios/trashed', 'Admin\UserController@trashed')->name('adminUsers.trashed');
-  Route::patch('/usuarios/{user}/trash', 'Admin\UserController@trash')->name('adminUsers.trash')
+	Route::get('/usuarios/papelera', 'Admin\UserController@trashed')->name('adminUsers.trashed');
+  Route::patch('/usuarios/{user}/eliminar', 'Admin\UserController@delete')->name('adminUsers.trash')
         ->where('user', '[0-9]+');
-  Route::get('/usuarios/{id}/restore', 'Admin\UserController@restore')->name('adminUsers.restore')
+  Route::get('/usuarios/{id}/restaurar', 'Admin\UserController@restore')->name('adminUsers.restore')
         ->where('id', '[0-9]+');
-  Route::delete('/usuarios/{id}/destroy', 'Admin\UserController@destroy')->name('adminUsers.destroy')
+  Route::delete('/usuarios/{id}/destruir', 'Admin\UserController@destroy')->name('adminUsers.destroy')
         ->where('id', '[0-9]+');
   
   // Contents
