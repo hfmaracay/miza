@@ -17,9 +17,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/institucion', function() {
-	return view('web.institucion');
-})->name('institution');
+Route::get('/institucion', 'Web\InstitutionController@index')->name('institution');
 
 Route::get('/noticias')->name('news');
 Route::get('/noticias/{$news}')->name('news.show')->where('news', '[0-9]+');
