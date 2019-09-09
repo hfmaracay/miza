@@ -83,5 +83,15 @@ class ContentSeeder extends Seeder
         </div>
       </div>'
     ]);
+
+    factory(Content::class)->create([
+      'name' => 'CONTÁCTANOS',
+      'description' => '<p>Museo del Instituto de Zoología Agrícola "Francisco Fernandez Yépez"<br />
+      Facultad de Agronomía, Universidad Central de Venezuela<br />
+      Maracay - Venezuela</p>
+      <p>Dirección: Av 19 de Abril c/c Av Casanova Godoy UCV-Maracay</p>
+      <p>Dirección General: <a href="mailto:miza.ucv@gmail.com">miza.ucv@gmail.com</a></p>
+      <p>Coordinación de Colección: <a href="mailto:quintinarias@gmail.com">quintinarias@gmail.com</a></p>'
+    ]);
   }
 }

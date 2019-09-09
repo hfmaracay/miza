@@ -117,4 +117,13 @@ Route::group(['middleware' => 'auth', 'prefix' => '/admin'] , function() {
   
   // Messages
   Route::get('/mensajes', 'Admin\MessageController@index')->name('adminMessages');
+  Route::get('/mensajes/{message}','Admin\MessageController@show')->name('adminMessages.show')
+        ->where('message', '[0-9]+');
+  Route::get('/mensajes/papelera','Admin\MessageController@trashed')->name('adminMessages.trashed');
+  Route::patch('/mensajes/{message}/eliminar','Admin\MessageController@delete')->name('adminMessages.trash')
+        ->where('message', '[0-9]+');
+  Route::get('/mensajes/{id}/restaurar','Admin\MessageController@restore')->name('adminMessages.restore')
+        ->where('id','[0-9]+');
+  Route::delete('/mensajes/{id}/destruir','Admin\MessageController@destroy')->name('adminMessages.destroy')
+        ->where('id', '[0-9]+');
 });
