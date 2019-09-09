@@ -101,6 +101,19 @@ Route::group(['middleware' => 'auth', 'prefix' => '/admin'] , function() {
   
   // News
   Route::get('/noticias', 'Admin\NewsController@index')->name('adminNews');
+  Route::get('/noticias/agregar','Admin\NewsController@create')->name('adminNews.create');
+  Route::post('/noticias/agregar','Admin\NewsController@store')->name('adminNews.store');
+  Route::get('/noticias/{news}/editar','Admin\NewsController@edit')->name('adminNews.edit')
+        ->where('news', '[0-9]+');
+  Route::put('/noticias/{news}/editar','Admin\NewsController@update')->name('adminNews.update')
+        ->where('news', '[0-9]+');
+  Route::get('/noticias/papelera','Admin\NewsController@trashed')->name('adminNews.trashed');
+  Route::patch('/noticias/{news}/eliminar','Admin\NewsController@delete')->name('adminNews.trash')
+        ->where('news', '[0-9]+');
+  Route::get('/noticias/{id}/restaurar','Admin\NewsController@restore')->name('adminNews.restore')
+        ->where('id','[0-9]+');
+  Route::delete('/noticias/{id}/destruir','Admin\NewsController@destroy')->name('adminNews.destroy')
+        ->where('id', '[0-9]+');
   
   // Messages
   Route::get('/mensajes', 'Admin\MessageController@index')->name('adminMessages');

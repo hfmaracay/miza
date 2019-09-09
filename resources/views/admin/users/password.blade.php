@@ -12,7 +12,7 @@
 
 @section('content')
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800"><i class="fas fa-address-card"></i> Usuarios</h1>
+<h1 class="h3 mb-4 text-gray-800"><i class="fas fa-users"></i> Usuarios</h1>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="fas fa-home"></i></a></li>
