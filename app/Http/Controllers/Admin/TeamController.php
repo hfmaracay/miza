@@ -7,6 +7,7 @@ use App\Queries\TeamFilter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teams\{AdminCreateTeamRequest, AdminUpdateTeamRequest};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
@@ -140,6 +141,9 @@ class TeamController extends Controller
   public function destroy(int $id)
   {
     $team = Team::onlyTrashed()->where('id', $id)->first();
+
+    $teamImage = $team->image;
+    Storage::disk('public')->delete('teams/'.$teamImage);
 
     $team->forceDelete();
 

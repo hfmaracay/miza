@@ -1,8 +1,9 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Equipo')
+@section('title', 'Editar Noticia')
 
 @push('styles')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" />
 <style type="text/css">
 .files input {
   outline: 2px dashed #92b0b3;
@@ -75,19 +76,19 @@
 
 @section('content')
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800"><i class="fas fa-address-card"></i> Equipo</h1>
+<h1 class="h3 mb-4 text-gray-800"><i class="fas fa-newspaper"></i> Noticias</h1>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="fas fa-home"></i></a></li>
-    <li class="breadcrumb-item"><a href="{{ route('adminTeams') }}">Equipo</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('adminNews') }}">Noticias</a></li>
     <li class="breadcrumb-item active" aria-current="page">Editar</li>
   </ol>
 </nav>
 <div class="row justify-content-md-center">
-  <div class="col-md-8">
+  <div class="col-md-10">
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Editar un miembro del equipo</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Editar Noticia</h6>
       </div>
       <div class="card-body">
         @if(session()->has('message'))
@@ -104,47 +105,33 @@
           </ul>
         </div>
         @endif
-        <form id="form-update" name="form-update" method="POST" action="{{ route('adminTeams.update', $team) }}" enctype="multipart/form-data" class="form-class needs-validation" novalidate>
+        <form id="form-update" name="form-update" method="POST" action="{{ route('adminNews.update', $news) }}" enctype="multipart/form-data" class="form-class needs-validation" novalidate>
           @csrf
           {{ method_field('PUT') }}
           <div class="form-group">
-            <label for="name" class="sr-only">Nombre</label>
-            <input type="text" name="name" id="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name', $team->name) }}" placeholder="Nombre" required />
+            <label for="name" class="sr-only">Título</label>
+            <input type="text" name="name" id="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name', $news->name) }}" placeholder="Título" required />
             <div class="invalid-feedback">
-              {{ $errors->has('name') ? $errors->first('name') : 'Nombre es Requerido' }}
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="last_name" class="sr-only">Apellido</label>
-            <input type="text" name="last_name" id="last_name" class="form-control {{ $errors->has('last_name') ? 'is-invalid' : '' }}" value="{{ old('last_name', $team->last_name) }}" placeholder="Apellido" required />
-            <div class="invalid-feedback">
-              {{ $errors->has('last_name') ? $errors->first('last_name') : 'Apellido es Requerido' }}
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="title" class="sr-only">Cargo</label>
-            <input type="text" name="title" id="title" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ old('title', $team->title) }}" placeholder="Cargo" required />
-            <div class="invalid-feedback">
-              {{ $errors->has('title') ? $errors->first('title') : 'Cargo es Requerido' }}
+              {{ $errors->has('name') ? $errors->first('name') : 'Título es Requerido' }}
             </div>
           </div>
           <div class="form-group">
             <label for="description" class="sr-only">Descripición</label>
-            <textarea name="description" id="description" cols="30" rows="5" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" placeholder="Descripción" required>{!! $team->description !!}</textarea>
+            <textarea name="description" id="description" cols="30" rows="5" class="form-control textareacontent {{ $errors->has('description') ? 'is-invalid' : '' }}" placeholder="Descripción" required>{!! $news->description !!}</textarea>
             <div class="invalid-feedback">
               {{ $errors->has('description') ? $errors->first('description') : 'Descripción es Requerida' }}
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-4">
-              <img class="rounded img-fluid" src="{{ asset($team->UrlPhoto) }}" alt="Foto" title="Foto" />
+              <img class="rounded img-fluid" src="{{ asset($news->UrlImage) }}" alt="Imagen" title="Imagen" />
             </div>
             <div class="col-md-8">
               <div class="form-group files">
-                <label for="photo" class="sr-only">Foto</label>
-                <input type="file" class="form-control" name="photo" id="photo" />
+                <label for="image" class="sr-only">Imagen</label>
+                <input type="file" class="form-control" name="image" id="image" />
                 <div class="invalid-feedback">
-                  {{ $errors->has('photo') ? $errors->first('photo') : 'Foto es Requerida' }}
+                  {{ $errors->has('image') ? $errors->first('image') : 'Imagen es Requerida' }}
                 </div>
               </div>
             </div>
@@ -160,6 +147,7 @@
 @endsection
 
 @push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
@@ -178,6 +166,12 @@
       }, false);
     });
   }, false);
+
+  $('.textareacontent').summernote({
+    placeholder: 'Descripción',
+    tabsize: 2,
+    height: 300
+  });
 })();
 </script>
 @endpush
