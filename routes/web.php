@@ -22,9 +22,8 @@ Route::get('/institucion', 'Web\InstitutionController@index')->name('institution
 Route::get('/noticias', 'Web\NewsController@index')->name('news');
 Route::get('/noticias/{news}', 'Web\NewsController@show')->name('news.show')->where('news', '[0-9]+');
 
-Route::get('/equipo', function() {
-	return view('web.equipo');
-})->name('team');
+Route::get('/equipo', 'Web\TeamController@index')->name('team');
+Route::get('/equipo/{team}', 'Web\TeamController@show')->name('team.show')->where('team', '[0-9]+');
 
 Route::get('/contacto', 'Web\MessageController@create')->name('contact');
 Route::post('/contacto/agregar','Web\MessageController@store')->name('contact.store');
