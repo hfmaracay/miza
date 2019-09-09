@@ -14,6 +14,9 @@
           <a class="nav-link text-uppercase" href="{{ route('team') }}">Equipo</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link text-uppercase" href="{{ route('news') }}">Noticias</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link text-uppercase" href="{{ route('contact') }}">Contacto</a>
         </li>
         @if(Route::has('login'))
