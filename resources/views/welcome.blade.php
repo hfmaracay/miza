@@ -71,14 +71,14 @@
   </div>
   <section class="container mt-n3">
     <div class="pb-5 text-center row d-flex align-items-center justify-content-center">
-      <h1 class="h1 qsb col-sm-8 ">El 2do museo de insectos MÁS GRANDE de Latinoamérica</h1>
+      <h1 class="h1 qsb col-sm-8 ">{{ $content1->name }}</h1>
     </div>
     <div class="row d-flex justify-content-between align-items-center">
       <div class="col-sm-6">
         <img class="img-thumbnail" src="{{ asset('img/MIZA_Sede.jpg') }}" alt="Sede MIZA" title="Sede MIZA" />
       </div>
       <div class="col-sm-6  text-center">
-        <p class="lead text-justify">EI Museo del Instituto de Zoología Agrícola “Francisco Fernández Yépez” (MIZA), es una institución dedicada al estudio de la biodiversidad tropical. Tenemos la convicción de que el conocimiento de nuestro patrimonio biológico está íntimamente relacionado con su preservación y uso sostenible, es por ello que la educación ambiental es una herramienta vital para formar ciudadanos conscientes y protectores de nuestro patrimonio biológico.</p>
+        <p class="lead text-justify">{{ $content1->description }}</p>
         <a class="btn mx-auto text-white" href="{{ route('institution') }}">Ver más</a>
       </div>
     </div>
@@ -90,8 +90,8 @@
   </div>
   <section class="container-fluid my-5 py-5 banner-quote ">
     <blockquote class="blockquote text-center text-white py-5">
-      <p class="mb-0 h2 qsb">La mariposa no cuenta meses sino momentos, y tiene tiempo suficiente.</p>
-      <footer class="blockquote-footer text-white">Rabindranath Tagore</footer>
+      <p class="mb-0 h2 qsb">{{ $content2->description }}</p>
+      <footer class="blockquote-footer text-white">{{ $content2->name }}</footer>
     </blockquote>
   </section>
 
@@ -101,42 +101,20 @@
       <div class="col-12 py-5">
         <h2 class="text-center qsb h1">NOTICIAS RECIENTES</h2>
       </div>
+      @foreach($news as $new)
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm p-3">
-          <img src="{{ asset('img/not1.jpg') }}" alt="EcoPrácticas en MIZA" title="EcoPrácticas en MIZA" /> 
+          <img class="card-img-top" src="{{ asset($new->UrlImage) }}" alt="{{ $new->name }}" title="{{ $new->name }}" /> 
           <div class="card-body">
-            <h4 class="text-center">EcoPrácticas en MIZA</h4>
-            <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h4 class="text-center">{{ $new->name }}</h4>
+            {{-- <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> --}}
             <div class="d-flex justify-content-between align-items-center">
-              <button type="button" class="btn btn-sm text-white mx-auto">Ver más</button>
+              <a href="{{ route('news.show', $new) }}" class="btn btn-sm text-white mx-auto">Ver más</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm p-3">
-          <img src="{{ asset('img/not2.jpg') }}" alt="Visita Dr. Huber" title="Visita Dr. Huber" />
-          <div class="card-body">
-            <h4 class="text-center">Visita Dr. Huber</h4>
-            <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <button type="button" class="btn btn-sm text-white mx-auto">Ver más</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm p-3">
-          <img src="{{ asset('img/not3.jpg') }}" alt="Biólogo Belga en MIZA" title="Biólogo Belga en MIZA" />
-          <div class="card-body">
-            <h4 class="text-center">Biólogo Belga en MIZA</h4>
-            <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <button type="button" class="btn btn-sm text-white mx-auto">Ver más</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </section>
 
