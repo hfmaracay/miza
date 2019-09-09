@@ -32,6 +32,9 @@
             <a class="nav-link text-uppercase" href="{{ route('team') }}">Equipo</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link text-uppercase" href="{{ route('news') }}">Noticias</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link text-uppercase" href="{{ route('contact') }}">Contacto</a>
           </li>
           @if(Route::has('login'))
@@ -103,14 +106,14 @@
       </div>
       @foreach($news as $new)
       <div class="col-md-4">
-        <div class="card mb-4 shadow-sm p-3">
+        <div class="card mb-4 shadow-sm p-3 h-100">
           <img class="card-img-top" src="{{ asset($new->UrlImage) }}" alt="{{ $new->name }}" title="{{ $new->name }}" /> 
           <div class="card-body">
             <h4 class="text-center">{{ $new->name }}</h4>
             {{-- <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> --}}
-            <div class="d-flex justify-content-between align-items-center">
-              <a href="{{ route('news.show', $new) }}" class="btn btn-sm text-white mx-auto">Ver más</a>
-            </div>
+          </div>
+          <div class="card-footer text-center">
+            <a href="{{ route('news.show', $new) }}" class="btn btn-sm text-white mx-auto">Ver más</a>
           </div>
         </div>
       </div>
