@@ -8,13 +8,13 @@
           <a class="nav-link text-uppercase" href="{{ route('welcome') }}">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-uppercase" href="{{ route('institucion') }}">Institución</a>
+          <a class="nav-link text-uppercase" href="{{ route('institution') }}">Institución</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-uppercase" href="{{ route('equipo') }}">Equipo</a>
+          <a class="nav-link text-uppercase" href="{{ route('team') }}">Equipo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-uppercase" href="{{ route('contacto') }}">Contacto</a>
+          <a class="nav-link text-uppercase" href="{{ route('contact') }}">Contacto</a>
         </li>
         @if(Route::has('login'))
           @auth

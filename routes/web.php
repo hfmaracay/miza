@@ -21,15 +21,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/institucion', function() {
 	return view('web.institucion');
-})->name('institucion');
+})->name('institution');
 
 Route::get('/equipo', function() {
 	return view('web.equipo');
-})->name('equipo');
+})->name('team');
 
-Route::get('/contacto', function() {
-	return view('web.contacto');
-})->name('contacto');
+Route::get('/contacto', 'Web\MessageController@create')->name('contact');
+Route::post('/contacto/agregar','Web\MessageController@store')->name('contact.store');
 
 /*
 |--------------------------------------------------------------------------

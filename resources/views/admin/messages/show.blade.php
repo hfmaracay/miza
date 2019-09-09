@@ -27,13 +27,13 @@
         <h6 class="m-0 font-weight-bold text-primary">Detalle del Mensaje</h6>
       </div>
       <div class="card-body">
-        <div class="form-group">
-          <label for="name">Nombre</label>
-          <div class="form-text" id="name">{{ $message->name }}</div>
+        <div class="row form-group">
+          <label for="name" class="col-form-label col-sm-3">Nombre</label>
+          <div class="form-text col-sm-9" id="name">{{ $message->name }}</div>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <div class="form-text" id="email">{{ $message->email }}</div>
+        <div class="row form-group">
+          <label for="email" class="col-form-label col-sm-3">Email</label>
+          <div class="form-text col-sm-9" id="email">{{ $message->email }}</div>
         </div>
         <div class="form-group">
           <label for="description">Descripición</label>
