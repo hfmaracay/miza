@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-  return view('welcome');
-})->name('welcome');
+Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Auth::routes();
 
@@ -22,6 +20,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/institucion', function() {
 	return view('web.institucion');
 })->name('institution');
+
+Route::get('/noticias')->name('news');
+Route::get('/noticias/{$news}')->name('news.show')->where('news', '[0-9]+');
 
 Route::get('/equipo', function() {
 	return view('web.equipo');
