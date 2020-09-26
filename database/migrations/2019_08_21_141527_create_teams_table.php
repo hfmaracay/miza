@@ -19,7 +19,7 @@ class CreateTeamsTable extends Migration
       $table->string('last_name');
       $table->string('title');
       $table->longText('description');
-      $table->string('photo');
+      $table->string('photo')->nullable();
       $table->timestamps();
       $table->softDeletes();
     });
