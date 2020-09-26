@@ -4,19 +4,20 @@ Sitio Web del Museo del Instituto de Zoología Agrícola “Francisco Fernández
 
 ## Comenzando 🚀
 
-1. _Instalar Laravel 5.8._
+1. _Instalar Laravel 7.2._
 2. Laravel Authentication
-3. Roles de Usuarios con Bouncer 1.0.0-rc.5
+3. Roles de Usuarios con Bouncer 1.0.0-rc.8
 
 ## Requerimientos 
 
-* Laravel 5.8
-* PHP 7.1.3
+* Laravel 7.2
+* PHP 7.2.5
 * Bootstrap 4.3.1
 * Jquery 3.3.1
 * Popper 1.14.7
 * Font Awesome 5.3.1
 * Google Font
+* Laravel UI
 
 ## Consideraciones del desarrollo
 
