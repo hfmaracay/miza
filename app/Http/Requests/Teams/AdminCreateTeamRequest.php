@@ -62,12 +62,15 @@ class AdminCreateTeamRequest extends FormRequest
     }
     Storage::disk('public')->putFileAs('teams', $fileImage, $imageName);
     
-    $teams = Team::create([
+    $team = Team::create([
       'name' => $this->name,
       'last_name' =>$this->last_name,
       'title' => $this->title,
       'description' => $this->description,
       'photo' => $imageName
     ]);
+
+    $team->order = $team->id;
+    $team->save();
   }
 }

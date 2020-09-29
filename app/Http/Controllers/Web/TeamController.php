@@ -18,8 +18,8 @@ class TeamController extends Controller
   {
     $team = Team::query()
                 ->filterBy($filters, $request->only(['search', 'from', 'to']))
-                ->orderBy('id', 'DESC')
-                ->paginate();
+                ->orderBy('order', 'ASC')
+                ->paginate(9);
     
     $team->appends($filters->valid());
 

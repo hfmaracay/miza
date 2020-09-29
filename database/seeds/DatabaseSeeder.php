@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
       BouncerSeeder::class,
       UserSeeder::class,
       ContentSeeder::class,
-      TeamSeeder::class
+      TeamSeeder::class,
+      NewsSeeder::class
     ]);
   }
 }

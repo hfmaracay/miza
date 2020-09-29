@@ -17,7 +17,7 @@ class Team extends Model
    */
 
 	protected $fillable = [
-    'name', 'last_name', 'description', 'title', 'photo'
+    'name', 'last_name', 'description', 'title', 'photo', 'order'
   ];
 
 	/**

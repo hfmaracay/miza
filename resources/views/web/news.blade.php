@@ -9,7 +9,7 @@
 @section('content')
 <div class="container">
   <div class="py-5 text-center row d-flex align-items-center justify-content-center ">
-    <h1 class="h1 qsb col-sm-8 ">NOTICIAS</h1>
+    <h1 class="h1 qsb col-sm-8">NOTICIAS</h1>
   </div>
 	<div class="row">
     @foreach($news as $new)
