@@ -20,6 +20,7 @@ class CreateTeamsTable extends Migration
       $table->string('title');
       $table->longText('description');
       $table->string('photo')->nullable();
+      $table->unsignedInteger('order')->default(0);
       $table->timestamps();
       $table->softDeletes();
     });
