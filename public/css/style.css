@@ -9,14 +9,15 @@ html, body {
 }
 
 .header {
-  background: url("../img/banner1.jpg");
-  height: 100vh;
+  background: url("../img/Villini.jpg") rgba(136,72,28,0.7);
   background-size: cover;
   background-position: 0;
+  background-blend-mode: darken;
+  height: 100vh;
 }
 
 .header2 { 
-  background: url("../img/banner2.jpg") rgba(136,72,28,0.7); 
+  background: url("../img/Villini.jpg") rgba(136,72,28,0.7); 
   background-position: 50% 40%; 
   background-size: cover;
   background-blend-mode: darken;
@@ -25,10 +26,10 @@ html, body {
 }
 
 .banner-quote { 
-  background: url("../img/heliconius.jpg") rgba(136,72,28,0.6); 
+  background: url("../img/Panacea.jpg") rgba(136,72,28,0.6); 
   background-position: 50% 40%; 
   background-size: cover;
-  background-blend-mode: darken;
+  /* background-blend-mode: darken; */
   z-index: 1;
   position: relative;
 }
@@ -61,4 +62,10 @@ html, body {
 
 a.link-white {
   color: #FFFFFF;
+}
+
+.header .navbar-dark .navbar-nav .nav-link,
+.header2 .navbar-dark .navbar-nav .nav-link {
+  color: #FFFFFF;
+  font-weight: bold;
 }

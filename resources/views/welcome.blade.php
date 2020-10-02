@@ -70,7 +70,7 @@
 
   <!-- Seccion Quienes Somos -->
   <div class="bug text-right mt-n5">
-    <img class="mt-n5" style="margin-right:-100px" src="{{ asset('img/bug2.png') }}" alt="Bug" title="Bug" />
+    <img class="mt-n5" style="margin-right:-80px; width: 300px" src="{{ asset('img/Callicore_pitheas.png') }}" alt="Callicore_pitheas" title="Callicore_pitheas" />
   </div>
   <section class="container mt-n3">
     <div class="pb-5 text-center row d-flex align-items-center justify-content-center">
@@ -89,9 +89,9 @@
 
   <!-- Seccion Refran -->
   <div class="bug text-left ml-n5 mb-n5">
-    <img class="mb-n5" style="width: 250px" src="{{ asset('img/polilla.png') }}" alt="Polilla" title="Polilla" />
+    <img class="mb-n5" style="width: 250px" src="{{ asset('img/Diaetrhria_clymena.png') }}" alt="Diaetrhria_clymena" title="Diaetrhria_clymena" />
   </div>
-  <section class="container-fluid my-5 py-5 banner-quote ">
+  <section class="container-fluid my-5 py-5 banner-quote">
     <blockquote class="blockquote text-center text-white py-5">
       <p class="mb-0 h2 qsb">{{ $content2->description }}</p>
       <footer class="blockquote-footer text-white">{{ $content2->name }}</footer>
