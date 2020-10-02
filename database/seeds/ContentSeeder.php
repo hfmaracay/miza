@@ -13,7 +13,7 @@ class ContentSeeder extends Seeder
   public function run()
   {
     factory(Content::class)->create([
-      'name' => 'El 2do museo de insectos MÁS GRANDE de Latinoamérica',
+      'name' => 'Somos tu conexión con la biodiversidad',
       'description' => 'El Museo del Instituto de Zoología Agrícola “Francisco Fernández Yépez” (MIZA), es una institución dedicada al estudio de la biodiversidad tropical. Tenemos la convicción de que el conocimiento de nuestro patrimonio biológico está íntimamente relacionado con su preservación y uso sostenible, es por ello que la educación ambiental es una herramienta vital para formar ciudadanos conscientes y protectores de nuestro patrimonio biológico.'
     ]);
 
