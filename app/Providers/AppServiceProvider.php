@@ -34,8 +34,8 @@ class AppServiceProvider extends ServiceProvider
       'assigned_roles' => 'bouncer_assigned_roles',
     ]);
 
-    if(App::environment('production')) {
-      URL::forceScheme('https');
-    }
+    // if(App::environment('production')) {
+    //   URL::forceScheme('https');
+    // }
   }
 }
