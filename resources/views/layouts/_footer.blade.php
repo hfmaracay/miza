@@ -2,7 +2,9 @@
 <section class="container-fluid bg-brown mt-5">
   <div class="row d-flex justify-content-center py-5">
     <div class="col-md-4 text-center">
-      <img src="{{ asset('img/MIZA.jpg') }}" width="70" alt="MIZA" title="MIZA" />
+      <img src="{{ asset('img/MIZA.jpg') }}" width="70" alt="MIZA" title="MIZA" class="mx-2" />
+      <img src="{{ asset('img/FAGRO.jpg') }}" width="70" alt="FAGRO" title="FAGRO" class="mx-2" />
+      <img src="{{ asset('img/UCV.png') }}" width="70" alt="UCV" title="UCV" class="mx-2" />
     </div>
   </div>
   <div class="row d-flex justify-content-center">
