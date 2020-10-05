@@ -37,7 +37,7 @@
           <li class="nav-item">
             <a class="nav-link text-uppercase" href="{{ route('contact') }}">Contacto</a>
           </li>
-          @if(Route::has('login'))
+          {{-- @if(Route::has('login'))
             @auth
               <li class="nav-item">
                 <a class="nav-link text-uppercase" href="{{ url('/home') }}">Home</a>
@@ -52,7 +52,7 @@
                 </li>
               @endif
             @endauth
-          @endif
+          @endif --}}
         </ul>  
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,7 +125,9 @@
   <section class="container-fluid bg-brown mt-5">
     <div class="row d-flex justify-content-center py-5">
       <div class="col-md-4 text-center">
-        <img src="{{ asset('img/MIZA.jpg') }}" width="70" alt="MIZA" title="MIZA" />
+        <img src="{{ asset('img/MIZA.jpg') }}" width="70" alt="MIZA" title="MIZA" class="mx-2" />
+        <img src="{{ asset('img/FAGRO.jpg') }}" width="70" alt="FAGRO" title="FAGRO" class="mx-2" />
+        <img src="{{ asset('img/UCV.png') }}" width="70" alt="UCV" title="UCV" class="mx-2" />
       </div>
     </div>
     <div class="row d-flex justify-content-center">

@@ -19,7 +19,7 @@
         <li class="nav-item">
           <a class="nav-link text-uppercase" href="{{ route('contact') }}">Contacto</a>
         </li>
-        @if(Route::has('login'))
+        {{-- @if(Route::has('login'))
           @auth
             <li class="nav-item">
               <a class="nav-link text-uppercase" href="{{ url('/home') }}">Home</a>
@@ -34,7 +34,7 @@
               </li>
             @endif
           @endauth
-        @endif
+        @endif --}}
       </ul>  
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
