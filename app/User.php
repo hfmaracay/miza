@@ -3,6 +3,7 @@
 namespace App;
 
 use Bouncer;
+use App\Queries\QueryFilter;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -56,5 +57,10 @@ class User extends Authenticatable
     } else {
       return 'User';
     }
+  }
+
+  public function scopeFilterBy($query, QueryFilter $filters, array $data)
+  {
+  	return $filters->applyTo($query, $data);
   }
 }

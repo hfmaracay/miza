@@ -1,0 +1,71 @@
+/*****************************
+       MIZA StyleSheet
+*****************************/
+
+html, body {
+  margin: 0;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+.header {
+  background: url("../img/Villini.jpg") rgba(136,72,28,0.7);
+  background-size: cover;
+  background-position: 0;
+  background-blend-mode: darken;
+  height: 100vh;
+}
+
+.header2 { 
+  background: url("../img/Villini.jpg") rgba(136,72,28,0.7); 
+  background-position: 50% 40%; 
+  background-size: cover;
+  background-blend-mode: darken;
+  z-index: 1;
+  position: relative;
+}
+
+.banner-quote { 
+  background: url("../img/Panacea.jpg") rgba(136,72,28,0.6); 
+  background-position: 50% 40%; 
+  background-size: cover;
+  /* background-blend-mode: darken; */
+  z-index: 1;
+  position: relative;
+}
+
+.btn, .bg-brown {
+  background-color: #88481c;
+}
+
+.f-14 {
+	font-size: 14px;
+}
+
+.f-12 {
+	font-size: 12px;
+}
+
+.qsb, .qs { 
+	font-family: 'Quicksand', sans-serif !important; 
+}
+
+.qsb {
+	font-weight: bolder;
+}
+
+.bug {
+	width: 100%;
+	position: relative; 
+  z-index: 99;
+}
+
+a.link-white {
+  color: #FFFFFF;
+}
+
+.header .navbar-dark .navbar-nav .nav-link,
+.header2 .navbar-dark .navbar-nav .nav-link {
+  color: #FFFFFF;
+  font-weight: bold;
+}

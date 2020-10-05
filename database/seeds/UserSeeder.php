@@ -20,5 +20,14 @@ class UserSeeder extends Seeder
     ]);
 
     $admin->assign('admin');
+
+    $admin = factory(User::class)->create([
+    	'name' => 'José Clavijo',
+    	'email' => 'miza.ucv@gmail.com',
+    	'email_verified_at' => now(),
+    	'password' => bcrypt('mizawebpepe'),
+    ]);
+
+    $admin->assign('admin');
   }
 }
