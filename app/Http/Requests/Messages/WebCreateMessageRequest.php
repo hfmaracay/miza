@@ -48,5 +48,7 @@ class WebCreateMessageRequest extends FormRequest
       'email' => $this->email,
       'description' => $this->description
     ]);
+
+    return $message;
   }
 }
