@@ -79,6 +79,7 @@ class ContentSeeder extends Seeder
             <li>AndinoNet</li>
             <li>Sociedad de Odonatología Latinoamericana (SOL)</li>
             <li>Mauro Costa</li>
+            <li>Hackers / Founders Maracay</li>
           </ul>
         </div>
       </div>'
