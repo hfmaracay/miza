@@ -86,6 +86,18 @@ class TeamSeeder extends Seeder
     ]);
 
     factory(Team::class)->create([
+      'name' => 'Nereida',
+      'last_name' => 'Delgado',
+      'title' => 'Profesora',
+      'description' => '<p>Areas de estudio:</p>
+      <ul>
+        <li>Diptera</li>
+      </ul>',
+      'photo' => 'nereida_delgado.jpg',
+      'order' => 7
+    ]);
+
+    factory(Team::class)->create([
       'name' => 'Luis',
       'last_name' => 'Joly',
       'title' => 'Profesor Jubilado',
@@ -94,7 +106,7 @@ class TeamSeeder extends Seeder
         <li>Coleoptera</li>
       </ul>',
       'photo' => 'luis_joly.jpg',
-      'order' => 7
+      'order' => 8
     ]);
 
     factory(Team::class)->create([
@@ -106,7 +118,7 @@ class TeamSeeder extends Seeder
         <li>Odonata</li>
       </ul>',
       'photo' => 'jurg_de_marmels.jpg',
-      'order' => 8
+      'order' => 9
     ]);
 
     factory(Team::class)->create([
@@ -118,7 +130,7 @@ class TeamSeeder extends Seeder
         <li>Lepidoptera</li>
       </ul>',
       'photo' => 'mauro_costa.jpg',
-      'order' => 9
+      'order' => 10
     ]);
 
     factory(Team::class)->create([
@@ -131,7 +143,7 @@ class TeamSeeder extends Seeder
         <li>Hymenoptera</li>
       </ul>',
       'photo' => 'marco_gaiani.jpg',
-      'order' => 10
+      'order' => 11
     ]);
 
     factory(Team::class)->create([
@@ -143,7 +155,7 @@ class TeamSeeder extends Seeder
         <li>Lepidoptera</li>
       </ul>',
       'photo' => 'francisco_romero.jpg',
-      'order' => 11
+      'order' => 12
     ]);
 
     factory(Team::class)->create([
@@ -155,7 +167,7 @@ class TeamSeeder extends Seeder
         <li>Lepidoptera</li>
       </ul>',
       'photo' => 'angel_viloria.jpg',
-      'order' => 12
+      'order' => 13
     ]);
 
     factory(Team::class)->create([
@@ -167,7 +179,7 @@ class TeamSeeder extends Seeder
         <li>Hymenoptera</li>
       </ul>',
       'photo' => 'john_lattke.jpg',
-      'order' => 13
+      'order' => 14
     ]);
 
     factory(Team::class)->create([
@@ -179,7 +191,7 @@ class TeamSeeder extends Seeder
         <li>Hymenoptera</li>
       </ul>',
       'photo' => 'oswaldo_hernandez.jpg',
-      'order' => 14
+      'order' => 15
     ]);
 
     factory(Team::class)->create([
@@ -191,7 +203,7 @@ class TeamSeeder extends Seeder
         <li>Arácnidos</li>
       </ul>',
       'photo' => 'osvaldo_villareal.jpg',
-      'order' => 15
+      'order' => 16
     ]);
 
     factory(Team::class)->create([
@@ -202,8 +214,8 @@ class TeamSeeder extends Seeder
       <ul>
         <li>Lepidoptera</li>
       </ul>',
-      'photo' => 'osvaldo_villareal.jpg',
-      'order' => 16
+      'photo' => 'juan_de_souza.jpg',
+      'order' => 17
     ]);
 
     factory(Team::class)->create([
@@ -212,7 +224,7 @@ class TeamSeeder extends Seeder
       'title' => 'Técnico',
       'description' => '<p></p>',
       'photo' => 'diony_velasquez.jpg',
-      'order' => 17
+      'order' => 18
     ]);
 
     factory(Team::class)->create([
@@ -221,7 +233,7 @@ class TeamSeeder extends Seeder
       'title' => 'Técnico',
       'description' => '<p></p>',
       'photo' => 'franklin_rojas.jpg',
-      'order' => 18
+      'order' => 19
     ]);
 
     factory(Team::class)->create([
@@ -230,7 +242,16 @@ class TeamSeeder extends Seeder
       'title' => 'Secretaria',
       'description' => '<p></p>',
       'photo' => 'anexis_sanchez.jpg',
-      'order' => 19
+      'order' => 20
+    ]);
+
+    factory(Team::class)->create([
+      'name' => 'Edixon',
+      'last_name' => 'Malpa',
+      'title' => 'Seguridad',
+      'description' => '<p></p>',
+      'photo' => 'edixon_malpa.jpg',
+      'order' => 21
     ]);
   }
 }
