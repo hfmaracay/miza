@@ -75,7 +75,7 @@ class AdminUpdateTeamRequest extends FormRequest
         Storage::disk('public')->delete('teams/' . $old_image);
       }
       
-      $team->image = $imageName;
+      $team->photo = $imageName;
     }
 
     $team->save();
