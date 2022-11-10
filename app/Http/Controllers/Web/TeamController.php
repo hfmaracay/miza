@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Team;
+use App\Models\Team;
 use App\Queries\TeamFilter;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

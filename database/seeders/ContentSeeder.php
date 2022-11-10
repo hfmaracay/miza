@@ -1,6 +1,8 @@
 <?php
 
-use App\Content;
+namespace Database\Seeders;
+
+use App\Models\Content;
 use Illuminate\Database\Seeder;
 
 class ContentSeeder extends Seeder
@@ -12,32 +14,32 @@ class ContentSeeder extends Seeder
    */
   public function run()
   {
-    factory(Content::class)->create([
+    Content::factory()->create([
       'name' => 'Somos tu conexión con la biodiversidad',
       'description' => 'El Museo del Instituto de Zoología Agrícola “Francisco Fernández Yépez” (MIZA), es una institución dedicada al estudio de la biodiversidad tropical. Tenemos la convicción de que el conocimiento de nuestro patrimonio biológico está íntimamente relacionado con su preservación y uso sostenible, es por ello que la educación ambiental es una herramienta vital para formar ciudadanos conscientes y protectores de nuestro patrimonio biológico.'
     ]);
 
-    factory(Content::class)->create([
+    Content::factory()->create([
       'name' => 'Rabindranath Tagore',
       'description' => 'La mariposa no cuenta meses sino momentos, y tiene tiempo suficiente.'
     ]);
 
-    factory(Content::class)->create([
+    Content::factory()->create([
       'name' => 'INSTITUCIÓN',
       'description' => '<p>El Museo del Instituto de Zoología Agrícola "Francisco Fernández Yépez" (MIZA), es una institución dedicada al estudio de la biodiversidad tropical. Tenemos la convicción de que el conocimiento de nuestro patrimonio biológico está íntimamente relacionado con su preservación y uso sostenible, es por ello que la educación ambiental es una herramienta vital para formar ciudadanos conscientes y protectores de nuestro patrimonio biológico.</p>'
     ]);
 
-    factory(Content::class)->create([
+    Content::factory()->create([
       'name' => 'Visión',
       'description' => '<p>Nuestra Visión es la de ser una institución fundamental para el estudio y conservación de la fauna de los trópicos americanos, especialmente la de Venezuela y la región andina y caribeña, con el fin de contribuir a su aprovechamiento sostenible en el tiempo, y así lograr un mayor bienestar social. Somos una institución con personal de alta calidad, identificado con las actividades del MIZA y convencido de que la educación en todas sus expresiones es la clave para alcanzar una mejor sociedad, compatible con su entorno natural.</p>'
     ]);
 
-    factory(Content::class)->create([
+    Content::factory()->create([
       'name' => 'Misión',
       'description' => '<p>Nuestra Misión es la de contribuir al conocimiento de la fauna venezolana y de otras áreas del Neotrópico en conjunción con entes públicos y privados, mediante el uso de estrategias modernas de la museología, a fin de lograr el uso sostenible de nuestra biodiversidad y así mejorar la calidad de vida.</p>'
     ]);
 
-    factory(Content::class)->create([
+    Content::factory()->create([
       'name' => 'Agradecimientos',
       'description' => '<p>La construcción, equipamiento, mantenimiento y formación de recursos humanos del MIZA ha sido posible por los aportes de instituciones, empresas nacionales e internacionales y personas. A ellos nuestro sincero agradecimiento.</p>
       <div class="row">
@@ -79,12 +81,13 @@ class ContentSeeder extends Seeder
             <li>AndinoNet</li>
             <li>Sociedad de Odonatología Latinoamericana (SOL)</li>
             <li>Mauro Costa</li>
+            <li>Hackers / Founders Maracay</li>
           </ul>
         </div>
       </div>'
     ]);
 
-    factory(Content::class)->create([
+    Content::factory()->create([
       'name' => 'CONTÁCTANOS',
       'description' => '<p>Museo del Instituto de Zoología Agrícola "Francisco Fernandez Yépez"<br />
       Facultad de Agronomía, Universidad Central de Venezuela<br />

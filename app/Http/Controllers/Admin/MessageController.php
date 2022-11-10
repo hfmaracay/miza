@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Message;
+use App\Models\Message;
 use App\Queries\MessageFilter;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

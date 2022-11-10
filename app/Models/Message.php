@@ -1,14 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Queries\QueryFilter;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Content extends Model
+class Message extends Model
 {
-	use SoftDeletes;
+  use SoftDeletes, HasFactory;
 
   /**
    * The attributes that are mass assignable.
@@ -16,7 +17,7 @@ class Content extends Model
    * @var array
    */
   protected $fillable = [
-    'name', 'description'
+    'name', 'email', 'description'
   ];
 
   public function scopeFilterBy($query, QueryFilter $filters, array $data) {

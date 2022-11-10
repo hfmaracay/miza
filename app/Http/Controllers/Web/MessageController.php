@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\{Message, Content};
+use App\Models\{Message, Content};
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Messages\WebCreateMessageRequest;
 use App\Mail\ContactMail;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Users\{UpdateProfileRequest, UpdatePasswordRequest};
 use Illuminate\Http\Request;

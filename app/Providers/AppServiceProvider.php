@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Bouncer;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\{Schema, URL, App};
 
@@ -34,8 +35,10 @@ class AppServiceProvider extends ServiceProvider
       'assigned_roles' => 'bouncer_assigned_roles',
     ]);
 
-    // if(App::environment('production')) {
-    //   URL::forceScheme('https');
-    // }
+    if(App::environment('production')) {
+      URL::forceScheme('https');
+    }
+
+    Paginator::useBootstrap();
   }
 }

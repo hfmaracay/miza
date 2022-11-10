@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\User;
+use App\Models\User;
 use App\Queries\UserFilter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Users\AdminUpdateProfileRequest;

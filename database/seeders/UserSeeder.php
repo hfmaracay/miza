@@ -1,6 +1,8 @@
 <?php
 
-use App\User;
+namespace Database\Seeders;
+
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -12,22 +14,22 @@ class UserSeeder extends Seeder
    */
   public function run()
   {
-    $admin = factory(User::class)->create([
-    	'name' => 'Dayan Betancourt',
+    $admin = User::factory()->create([
+      'name' => 'Dayan Betancourt',
     	'email' => 'dkbetancourt@gmail.com',
     	'email_verified_at' => now(),
-    	'password' => bcrypt('dayan123'),
+    	'password' => bcrypt('dayan123')
     ]);
-
+    
     $admin->assign('admin');
 
-    $admin = factory(User::class)->create([
-    	'name' => 'José Clavijo',
+    $admin = User::factory()->create([
+      'name' => 'José Clavijo',
     	'email' => 'miza.ucv@gmail.com',
     	'email_verified_at' => now(),
-    	'password' => bcrypt('mizawebpepe'),
+    	'password' => bcrypt('mizawebpepe')
     ]);
-
+    
     $admin->assign('admin');
   }
 }

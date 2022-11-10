@@ -1,13 +1,29 @@
 <?php
 
-/* @var $factory \Illuminate\Database\Eloquent\Factory */
+namespace Database\Factories;
 
-use App\Content;
-use Faker\Generator as Faker;
+use App\Models\Content;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Content::class, function (Faker $faker) {
-  return [
-    'name' => $faker->name,
-    'description' => $faker->text
-  ];
-});
+class ContentFactory extends Factory
+{
+  /**
+   * The name of the factory's corresponding model.
+   *
+   * @var string
+   */
+  protected $model = Content::class;
+
+  /**
+   * Define the model's default state.
+   *
+   * @return array<string, mixed>
+   */
+  public function definition()
+  {
+    return [
+      'name' => $this->faker->firstName(),
+      'description' => $this->faker->text
+    ];
+  }
+}

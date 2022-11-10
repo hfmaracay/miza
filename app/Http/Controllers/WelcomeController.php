@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\{Content, News};
+use App\Models\{Content, News};
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
