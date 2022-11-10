@@ -1,6 +1,8 @@
 <?php
 
-use App\Team;
+namespace Database\Seeders;
+
+use App\Models\Team;
 use Illuminate\Database\Seeder;
 
 class TeamSeeder extends Seeder
@@ -12,7 +14,7 @@ class TeamSeeder extends Seeder
    */
   public function run()
   {
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'José',
       'last_name' => 'Clavijo',
       'title' => 'Director y Profesor Jubilado',
@@ -25,7 +27,7 @@ class TeamSeeder extends Seeder
       'order' => 1
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Vilma',
       'last_name' => 'Savini',
       'title' => 'Profesora',
@@ -37,7 +39,7 @@ class TeamSeeder extends Seeder
       'order' => 2
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Quintin',
       'last_name' => 'Arias',
       'title' => 'Profesor',
@@ -49,7 +51,7 @@ class TeamSeeder extends Seeder
       'order' => 3
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Jairelen',
       'last_name' => 'Mora',
       'title' => 'Profesora',
@@ -61,7 +63,7 @@ class TeamSeeder extends Seeder
       'order' => 4
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Abimel',
       'last_name' => 'Moreno',
       'title' => 'Profesora',
@@ -73,7 +75,7 @@ class TeamSeeder extends Seeder
       'order' => 5
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Rafael',
       'last_name' => 'Montilla',
       'title' => 'Profesor',
@@ -85,7 +87,7 @@ class TeamSeeder extends Seeder
       'order' => 6
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Nereida',
       'last_name' => 'Delgado',
       'title' => 'Profesora',
@@ -97,7 +99,7 @@ class TeamSeeder extends Seeder
       'order' => 7
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Luis',
       'last_name' => 'Joly',
       'title' => 'Profesor Jubilado',
@@ -109,7 +111,7 @@ class TeamSeeder extends Seeder
       'order' => 8
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Jurg',
       'last_name' => 'De Marmels',
       'title' => 'Profesor Jubilado',
@@ -121,7 +123,7 @@ class TeamSeeder extends Seeder
       'order' => 9
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Mauro',
       'last_name' => 'Costa',
       'title' => 'Asociado',
@@ -133,7 +135,7 @@ class TeamSeeder extends Seeder
       'order' => 10
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Marco',
       'last_name' => 'Gaiani',
       'title' => 'Asociado',
@@ -146,7 +148,7 @@ class TeamSeeder extends Seeder
       'order' => 11
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Francisco',
       'last_name' => 'Romero',
       'title' => 'Asociado',
@@ -158,7 +160,7 @@ class TeamSeeder extends Seeder
       'order' => 12
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Angel',
       'last_name' => 'Viloria',
       'title' => 'Asociado',
@@ -170,7 +172,7 @@ class TeamSeeder extends Seeder
       'order' => 13
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'John',
       'last_name' => 'Lattke',
       'title' => 'Asociado',
@@ -182,7 +184,7 @@ class TeamSeeder extends Seeder
       'order' => 14
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Oswaldo',
       'last_name' => 'Hernández',
       'title' => 'Asociado',
@@ -194,7 +196,7 @@ class TeamSeeder extends Seeder
       'order' => 15
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Osvaldo',
       'last_name' => 'Villareal',
       'title' => 'Asociado',
@@ -206,7 +208,7 @@ class TeamSeeder extends Seeder
       'order' => 16
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Juan C.',
       'last_name' => 'de Souza',
       'title' => 'Asociado',
@@ -218,7 +220,7 @@ class TeamSeeder extends Seeder
       'order' => 17
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Diony',
       'last_name' => 'Velásquez',
       'title' => 'Técnico',
@@ -227,7 +229,7 @@ class TeamSeeder extends Seeder
       'order' => 18
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Franklin',
       'last_name' => 'Rojas',
       'title' => 'Técnico',
@@ -236,7 +238,7 @@ class TeamSeeder extends Seeder
       'order' => 19
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Anexis',
       'last_name' => 'Sánchez',
       'title' => 'Secretaria',
@@ -245,7 +247,7 @@ class TeamSeeder extends Seeder
       'order' => 20
     ]);
 
-    factory(Team::class)->create([
+    Team::factory()->create([
       'name' => 'Edixon',
       'last_name' => 'Malpa',
       'title' => 'Seguridad',

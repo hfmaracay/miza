@@ -1,14 +1,30 @@
 <?php
 
-/* @var $factory \Illuminate\Database\Eloquent\Factory */
+namespace Database\Factories;
 
-use App\News;
-use Faker\Generator as Faker;
+use App\Models\News;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(News::class, function (Faker $faker) {
-  return [
-    'name' => $faker->name,
-    'description' => $faker->text,
-    'image' => 'image.jpg'
-  ];
-});
+class NewsFactory extends Factory
+{
+  /**
+   * The name of the factory's corresponding model.
+   *
+   * @var string
+   */
+  protected $model = News::class;
+
+  /**
+   * Define the model's default state.
+   *
+   * @return array<string, mixed>
+   */
+  public function definition()
+  {
+    return [
+      'name' => $this->faker->firstName(),
+      'description' => $this->faker->text,
+      'image' => 'image.jpg'
+    ];
+  }
+}

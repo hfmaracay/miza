@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Content;
+use App\Models\Content;
 use App\Queries\ContentFilter;
 use App\Http\Requests\Contents\{AdminCreateContentRequest, AdminUpdateContentRequest};
 use App\Http\Controllers\Controller;

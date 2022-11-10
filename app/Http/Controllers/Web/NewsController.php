@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\News;
+use App\Models\News;
 use App\Queries\NewsFilter;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
