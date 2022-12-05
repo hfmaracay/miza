@@ -29,6 +29,9 @@
             <a class="nav-link text-uppercase" href="{{ route('institution') }}">Institución</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link text-uppercase" href="https://leps.miza-ucv.org.ve/" target="_blank">Lepidoptera</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link text-uppercase" href="{{ route('team') }}">Equipo</a>
           </li>
           <li class="nav-item">
@@ -148,7 +151,7 @@
     </div>
     <div class="row d-flex justify-content-center pt-5">
       <div class="col-md-4 text-center">
-        <p class=" text-white text-center f-12">Desarrollado por <a class="link-white" href="https://hfmaracay.com.ve/" target="_blank">H/F Maracay</a> | Diseñado por <a class="link-white" href="https://www.instagram.com/melendesigns" target="_blank">@melendesigns</a></p>
+        <p class=" text-white text-center f-12">Desarrollado por <a class="link-white" href="https://hfmaracay.com/" target="_blank">H/F Maracay</a> | Diseñado por <a class="link-white" href="https://www.instagram.com/melendesigns" target="_blank">@melendesigns</a></p>
       </div>
     </div>
   </section>
