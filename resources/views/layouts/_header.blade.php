@@ -11,6 +11,9 @@
           <a class="nav-link text-uppercase" href="{{ route('institution') }}">Institución</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link text-uppercase" href="https://leps.miza-ucv.org.ve/" target="_blank">Lepidoptera</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link text-uppercase" href="{{ route('team') }}">Equipo</a>
         </li>
         <li class="nav-item">
